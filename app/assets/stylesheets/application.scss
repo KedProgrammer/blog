@@ -53,6 +53,16 @@ input {
 
 }
 
+.wrap{
+
+  word-wrap: break-word;
+}
+
+.post {
+
+  padding: 90px;
+
+}
 .login {
 
   padding: 80px;
@@ -72,4 +82,49 @@ input {
   .form-control {
     color: $state-danger-text;
   }
+}
+
+.panel-heading h3{
+  font-size: 40px;
+
+color: #6699ff;
+
+}
+.col-md-6{
+
+  width: 700px;
+
+}
+
+.index{
+  margin-top: 10%;
+
+}
+
+.textarea{
+
+  height: 40%;
+
+}
+
+.principal{
+
+  border-width: 0px;
+  background-color: white !important;
+
+}
+
+.panel-default > .panel-heading {
+
+
+
+
+}
+
+.panel-heading > h4 {
+
+color: #999999;
+  font-size: 15px;
+
+
 }

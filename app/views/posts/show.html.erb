@@ -1,0 +1,38 @@
+
+<div class="row index">
+  <div class="col-md-6 col-md-offset-2">
+
+        <div class="row">
+          <div class="col-md-6 col-md-offset-1" >
+            <div class="panel panel-default principal">
+              <div class="panel-heading principal">
+                <h3><%= @post.tittle %></h3>
+              </div>
+              <div class="panel-body wrap">
+                <p><%= markdown(@post.content) %></p>
+              </div><s></s>
+            </div>
+            <% @comment.each do |c| %>
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <% user = User.find(c.user_id) %>
+                    <p> El usuario <%= user.name %> comentó :</p>
+                  </div>
+                  <div class="panel-body wrap">
+                    <p><%= c.content %></p>
+                  </div><s></s>
+                </div>
+            <% end %>
+            <% if logged_in? %>
+              <%= form_for(:session, url: comments_path) do |c| %>
+              <%= c.label "Comentar"  %>
+              <%= c.text_area :content, class: 'form-control' %>
+              <%= c.submit "Comentar", class: 'btn btn-primary' %>
+              <% end  %>
+            <% end %>
+
+          </div>
+        </div>
+
+  </div>
+</div>

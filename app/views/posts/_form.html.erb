@@ -1,0 +1,9 @@
+<%= form_for(@post) do |f| %>
+    <%= f.label :tittle %>
+    <%= f.text_field :tittle %>
+
+    <%= f.label :content%>
+
+    <%= f.text_area :content, class: 'textarea' %>
+    <%= f.submit @post.new_record? ? "Crear post" : "Editar post" , class: 'btn btn-primary'%>
+<% end %>

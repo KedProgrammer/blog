@@ -9,9 +9,13 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  root 'blog#index'
-  resources :blog
+  get '/nuevopost', to: 'posts#new'
+  root 'posts#index'
+
+
   resources :users
+  resources :posts
+  resources :comments
 
 
 end
