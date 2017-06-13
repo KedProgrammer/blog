@@ -14,12 +14,14 @@ class PostsController < ApplicationController
 
 
   def create
+
     @user = User.find(current_user.id)
     @post = @user.posts.build(post_params)
     if @post.save
+      flash[:success] = "Tu Post se ha creado correctamente"
+
       redirect_to posts_path
     else
-
       render 'new'
     end
   end
@@ -35,6 +37,7 @@ class PostsController < ApplicationController
   def update
   @post = Post.find(params[:id])
     if @post.update_attributes(post_params)
+      flash[:success] = "Tu Post se ha editado correctamente"
       redirect_to root_path
     else
       render 'edit'

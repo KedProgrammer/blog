@@ -11,7 +11,9 @@ module PostsHelper
     if aux.count == 2
       if aux[1] == "minutes"
         aux[1] = "minutos"
-      else
+      elsif aux[1] == "minute"
+        aux[1] = "Minuto"
+        else
         aux[1] = "dias"
       end
 

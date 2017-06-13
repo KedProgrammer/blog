@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def create
+    flash[:success] = "Has comentado correctamente"
     @user = User.find(current_user.id)
     @post = Post.find(session[:post_id])
     @comment = @post.comments.build(comment_params)
