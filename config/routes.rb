@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
   get '/nuevopost', to: 'posts#new'
-
+  root 'posts#index'
 
 
   resources :users
