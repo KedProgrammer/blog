@@ -1,7 +1,6 @@
 
 <div class="row index">
   <div class="col-md-6 col-md-offset-2">
-
         <div class="row">
           <div class="col-md-6 col-md-offset-1" >
             <div class="panel panel-default principal">
@@ -10,13 +9,14 @@
               </div>
               <div class="panel-body wrap">
                 <p><%= markdown(@post.content) %></p>
-              </div><s></s>
+              </div>
+              <h2>Comentarios</h2>
             </div>
             <% @comment.each do |c| %>
                 <div class="panel panel-default">
                   <div class="panel-heading">
                     <% user = User.find(c.user_id) %>
-                    <p> El usuario <%= user.name %> comentó :</p>
+                    <p> El usuario <%= user.name %> comentó hace <%= timer(time_ago_in_words(c.created_at)) %></p>
                   </div>
                   <div class="panel-body wrap">
                     <p><%= c.content %></p>
