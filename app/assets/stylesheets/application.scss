@@ -122,15 +122,19 @@ color: #6699ff;
 
 .panel-default > .panel-heading {
 
-
-
-
 }
 
 .panel-heading > h4 {
-
 color: #999999;
   font-size: 15px;
-
-
 }
+
+.alert{
+  position: absolute;
+}
+
+#error_explanation > .alert {
+
+  position: relative;
+}
+
