@@ -8,7 +8,7 @@ class PostsController < ApplicationController
 
   end
   def new
-    #holaaaa
+    #holaaaa mundo
   @post = Post.new
   end
 
